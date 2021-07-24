@@ -10,6 +10,7 @@
 		00BC805026ACCB25005A142C /* PinAnchor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00BC804626ACCB25005A142C /* PinAnchor.framework */; };
 		00BC805526ACCB25005A142C /* PinAnchorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BC805426ACCB25005A142C /* PinAnchorTests.swift */; };
 		00BC805726ACCB25005A142C /* PinAnchor.h in Headers */ = {isa = PBXBuildFile; fileRef = 00BC804926ACCB25005A142C /* PinAnchor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00BC806526ACCC27005A142C /* View+PinAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BC806426ACCC27005A142C /* View+PinAnchor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		00BC804F26ACCB25005A142C /* PinAnchorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinAnchorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00BC805426ACCB25005A142C /* PinAnchorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinAnchorTests.swift; sourceTree = "<group>"; };
 		00BC805626ACCB25005A142C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00BC806426ACCC27005A142C /* View+PinAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+PinAnchor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				00BC804926ACCB25005A142C /* PinAnchor.h */,
 				00BC804A26ACCB25005A142C /* Info.plist */,
+				00BC806426ACCC27005A142C /* View+PinAnchor.swift */,
 			);
 			path = PinAnchor;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				TargetAttributes = {
 					00BC804526ACCB25005A142C = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 					00BC804E26ACCB25005A142C = {
 						CreatedOnToolsVersion = 12.4;
@@ -194,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00BC806526ACCC27005A142C /* View+PinAnchor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +346,7 @@
 		00BC805B26ACCB25005A142C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5NVWJ2SDAF;
@@ -357,6 +363,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = toni77777.PinAnchor;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +372,7 @@
 		00BC805C26ACCB25005A142C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5NVWJ2SDAF;
@@ -389,6 +397,7 @@
 		00BC805E26ACCB25005A142C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5NVWJ2SDAF;
 				INFOPLIST_FILE = PinAnchorTests/Info.plist;
@@ -407,6 +416,7 @@
 		00BC805F26ACCB25005A142C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5NVWJ2SDAF;
 				INFOPLIST_FILE = PinAnchorTests/Info.plist;
