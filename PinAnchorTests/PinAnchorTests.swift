@@ -6,28 +6,59 @@
 //
 
 import XCTest
+import UIKit
 @testable import PinAnchor
 
 class PinAnchorTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    // MARK: - Properties
+    
+    private var parentView: UIView!
+    private var childView: UIView!
+    
+    // MARK: - Overrides
+    
+    override func setUp() {
+        parentView = UIView()
+        childView = UIView()
+        parentView.addSubview(childView)
+        childView.translatesAutoresizingMaskIntoConstraints = false
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    // MARK: - Tests
+    
+    func testPinTopShouldInsetBeZero() {
+        childView.pinToTop()
+        
+        let constraint = parentView.constraints.first
+        XCTAssertEqual(constraint?.constant, 0)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testPinTopWithInsetShouldApplyInset() {
+        let inset: CGFloat = 16
+        childView.pinToTop(inset: inset)
+        
+        let constraint = parentView.constraints.first
+        XCTAssertEqual(constraint?.constant, inset)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testPinTopHaveTopAttribute() {
+        childView.pinToTop()
+        
+        let constraint = parentView.constraints.first
+        XCTAssertEqual(constraint?.firstAttribute, .top)
     }
-
+    
+    func testPinTopHaveActiveTopConstaint() {
+        childView.pinToTop()
+        
+        let constraint = parentView.constraints.first
+        XCTAssertTrue(constraint!.isActive)
+    }
+    
+    func testPinTopShouldAddOneConstraint() {
+        childView.pinToTop()
+        
+        XCTAssertEqual(parentView.constraints.count, 1)
+    }
 }
